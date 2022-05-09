@@ -1,0 +1,51 @@
+@use "../abstracts" as *;
+
+.fof {
+    main {
+        @include flex($dir: column);
+
+        min-height: 100vh;
+
+        .icons {
+            position: relative;
+            img {
+                width: 100px;
+                border-radius: 30px;
+                transform: rotate(-30deg);
+            }
+
+            i {
+                color: $errorColor;
+                font-size: 120px;
+                transform: rotate(10deg);
+
+                position: absolute;
+                right: -10px;
+            }
+        }
+
+        .text {
+            text-align: center;
+            margin: 20px 0;
+
+            h1 {
+                color: $errorColor;
+                font-size: 60px;
+            }
+
+            h2 {
+                font-size: 40px;
+            }
+
+            h3 {
+                font-size: 30px;
+            }
+        }
+
+        .button {
+            button {
+                @include button;
+            }
+        }
+    }
+}

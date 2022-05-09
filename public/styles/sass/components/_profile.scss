@@ -1,0 +1,296 @@
+@use "../abstracts" as *;
+
+// Main Profile Page
+.profile {
+    main {
+        @include flex($dir: column);
+
+        margin-top: 50px;
+        padding: 30px;
+
+        .account-info {
+            @include flex;
+
+            &-avatar {
+                transform: scaleX(-1);
+                margin-right: 50px;
+                width: 140px;
+            }
+
+            &-content {
+                @include flex(
+                    $just: flex-start,
+                    $align: flex-start,
+                    $dir: column
+                );
+
+                &-bottom {
+                    @include flex($just: flex-end, $dir: column);
+                }
+
+                h1 {
+                    margin-bottom: 10px;
+                }
+
+                .info {
+                    background-color: rgba(gray, 0.6);
+                    color: white;
+                    padding: 10px;
+                    border-radius: 6px;
+                }
+
+                a {
+                    align-self: flex-end;
+                    margin-top: 5px;
+
+                    text-align: right;
+                    text-decoration: none;
+
+                    color: blue;
+                    font-size: 90%;
+
+                    transition: $transition;
+
+                    &:hover {
+                        opacity: 0.6;
+                    }
+                }
+            }
+        }
+
+        .account-stats {
+            @include flex($just: space-evenly);
+
+            width: 80%;
+            margin-top: 60px;
+
+            color: $specialColor;
+            font-size: 32px;
+        }
+    }
+}
+
+// Edit Page
+.edit {
+    main {
+        @include flex($dir: column);
+
+        margin: auto;
+        margin-top: 60px;
+        overflow: hidden;
+
+        width: 220px;
+        padding: 20px;
+        border-radius: 14px;
+        background-color: white;
+
+        nav {
+            @include flex($just: space-evenly);
+
+            width: 100%;
+            margin-bottom: 30px;
+
+            i {
+                transition: $transition;
+                cursor: pointer;
+                &:hover {
+                    opacity: 0.4;
+                }
+            }
+        }
+
+        section {
+            @include flex;
+
+            transition: $transition;
+
+            &.step {
+                &-1 {
+                    transform: translateX(260px);
+                }
+                &-3 {
+                    transform: translateX(-260px);
+                }
+            }
+
+            > div {
+                @include flex($dir: column);
+
+                flex-shrink: 0;
+                width: 220px;
+                padding: 10px 20px;
+
+                input {
+                    font-size: 18px;
+                    padding: 4px 8px;
+                    border-radius: 12px;
+
+                    border: 1px solid black;
+                    outline: none;
+                    margin: 8px 0;
+
+                    &:focus {
+                        box-shadow: 0 0 4px 0 $mainColor;
+                    }
+                }
+
+                .edit-gender-field {
+                    @include flex($just: space-between);
+
+                    width: 100%;
+                    margin: 8px 0;
+
+                    button {
+                        opacity: 0.4;
+                        pointer-events: none;
+
+                        @include button($fontSize: 16px);
+                        background-image: none;
+
+                        &:hover {
+                            transform: scale(1.05);
+                        }
+                    }
+
+                    .edit-gender {
+                        &-male {
+                            background-color: $maleColor;
+                        }
+                        &-female {
+                            background-color: $femaleColor;
+                        }
+                    }
+
+                    &.male {
+                        .edit-gender-female {
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+
+                    &.female {
+                        .edit-gender-male {
+                            opacity: 1;
+                            pointer-events: all;
+                        }
+                    }
+                }
+            }
+
+            .save-btn {
+                @include button;
+                margin-top: 10px;
+            }
+        }
+
+        .edit-home {
+            button {
+                @include button;
+
+                width: 100%;
+                margin: 10px 0;
+
+                &.delete-account-btn {
+                    background-image: linear-gradient(
+                        to right,
+                        $errorColor,
+                        lighten($errorColor, 20%)
+                    );
+                }
+            }
+        }
+    }
+
+    .delete-account-popup {
+        @include flex($dir: column);
+
+        width: 240px;
+        padding: 10px 20px;
+        border-radius: 14px;
+        background-color: white;
+
+        z-index: 3;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transition: $transition;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+
+        > * {
+            margin: 8px 0;
+        }
+
+        &.active {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        input {
+            font-size: 20px;
+            text-align: center;
+
+            padding: 4px 8px;
+            width: calc(100% - 16px);
+
+            border-radius: 10px;
+            background-color: rgba(black, 0.05);
+
+            border: none;
+            outline: none;
+        }
+
+        .confirm {
+            @include flex($just: space-between);
+
+            p {
+                font-size: 14px;
+                padding-right: 8px;
+            }
+
+            .confirm-box {
+                background-color: $mainColor;
+                color: white;
+
+                width: 26px;
+                height: 26px;
+                border-radius: 8px;
+                flex-shrink: 0;
+                margin: auto;
+
+                text-align: center;
+                line-height: 26px;
+
+                cursor: pointer;
+                transition: $transition;
+                opacity: 0.4;
+
+                &.checked {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .delete-account-submit {
+            @include button(
+                $color: $errorColor,
+                $fontSize: 16px,
+                $borderRadius: 8px
+            );
+
+            opacity: 0.4;
+            pointer-events: none;
+
+            &.active {
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    .password-field {
+        position: relative;
+    }
+}

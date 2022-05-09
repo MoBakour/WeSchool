@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="edit">
+    <%- include("partials/head") %>
+
+    <body>
+        <!-- Header -->
+        <%- include("partials/header") %>
+
+        <main>
+            <nav>
+                <i class="fa-solid fa-chevron-left slide left"></i>
+                <h1>Edit <span>Account</span></h1>
+                <i class="fa-solid fa-chevron-right slide right"></i>
+            </nav>
+            <p class="error-field edit-account-error-field"></p>
+            <section class="step-2">
+                <div class="edit-username pass-field">
+                    <input
+                        type="text"
+                        class="edit-username-input"
+                        placeholder="Enter username"
+                        value="<%= locals.username %>"
+                    />
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            class="edit-username-pass-input pass-input"
+                            placeholder="Enter password"
+                        />
+                        <div class="pass-icon">
+                            <i class="fa-solid fa-eye-slash password-shown"></i>
+                            <i class="fa-solid fa-eye password-hidden"></i>
+                        </div>
+                    </div>
+                    <div class="edit-gender-field <%= locals.gender %>">
+                        <input
+                            type="hidden"
+                            class="edit-gender-input"
+                            value="<%= locals.gender %>"
+                        />
+                        <button class="edit-gender-male">
+                            Male <i class="fa-solid fa-mars"></i>
+                        </button>
+                        <button class="edit-gender-female">
+                            Female <i class="fa-solid fa-venus"></i>
+                        </button>
+                    </div>
+                    <button class="edit-username-btn save-btn">Save</button>
+                </div>
+
+                <div class="edit-home">
+                    <button class="slide-username">Change username</button>
+                    <button class="slide-password">Change password</button>
+                    <button class="delete-account-btn">
+                        Delete Account <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+
+                <div class="edit-password pass-field">
+                    <div class="password-field">
+                        <input
+                            type="password"
+                            placeholder="Enter password"
+                            class="edit-password-pass-input pass-input"
+                        />
+                        <div class="pass-icon">
+                            <i class="fa-solid fa-eye-slash password-shown"></i>
+                            <i class="fa-solid fa-eye password-hidden"></i>
+                        </div>
+                    </div>
+                    <input
+                        type="password"
+                        placeholder="Enter new password"
+                        class="edit-password-input pass-input"
+                    />
+                    <input
+                        type="password"
+                        placeholder="Confirm new password"
+                        class="edit-password-confirm-input pass-input"
+                    />
+                    <button class="edit-password-btn save-btn">Save</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Delete Account Popup -->
+        <div class="delete-account-popup">
+            <h2>Delete Account</h2>
+            <div class="pass-field">
+                <div class="password-field">
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        class="pass-input"
+                    />
+                    <div class="pass-icon">
+                        <i class="fa-solid fa-eye-slash password-shown"></i>
+                        <i class="fa-solid fa-eye password-hidden"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="confirm">
+                <p>
+                    <%= locals.username %>, are you sure you want to delete your
+                    account?
+                </p>
+                <div class="confirm-box"><i class="fa-solid fa-check"></i></div>
+            </div>
+
+            <button class="delete-account-submit">
+                Delete Account <i class="fa-solid fa-trash"></i>
+            </button>
+        </div>
+
+        <!-- Darken Effect -->
+        <div class="darken"></div>
+
+        <!-- Script Files -->
+        <script src="./scripts/edit.js" defer></script>
+    </body>
+</html>

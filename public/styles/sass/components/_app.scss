@@ -1,0 +1,140 @@
+@use "../abstracts" as *;
+
+.app {
+    main {
+        max-width: 80%;
+        margin: auto;
+        padding: 30px;
+
+        .search-class {
+            width: fit-content;
+            margin: auto;
+            padding: 20px 0;
+            position: relative;
+
+            &-input {
+                border: none;
+                outline: none;
+                padding: 4px 8px;
+                padding-left: 40px;
+                border-radius: 8px;
+                font-size: 20px;
+            }
+
+            &-icon {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 20px;
+            }
+        }
+
+        .classes {
+            @include flex($wrap: wrap);
+        }
+    }
+
+    form {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+
+        width: 320px;
+        max-height: 480px;
+        margin: auto;
+        padding: 10px 20px;
+        border-radius: 20px;
+        background-color: white;
+
+        overflow-y: auto;
+        transition: $transition;
+        z-index: 3;
+
+        &.active {
+            transform: translate(-50%, 20px);
+        }
+
+        h2 {
+            font-size: 30px;
+            color: $mainColor;
+            border-bottom: 1px solid $mainColor;
+        }
+
+        section {
+            padding: 10px;
+
+            label {
+                font-weight: bold;
+                display: block;
+                width: fit-content;
+                margin-bottom: 4px;
+            }
+
+            input {
+                display: block;
+            }
+
+            input[type="text"] {
+                width: calc(100% - 14px);
+                padding: 4px 6px;
+                border: 1px solid lighten(black, 40%);
+                border-radius: 6px;
+                font-size: 20px;
+                outline: none;
+
+                &:focus {
+                    border-color: $mainColor;
+                }
+            }
+
+            input[type="color"] {
+                cursor: pointer;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+            }
+
+            ul {
+                padding: 6px 0 10px 0;
+
+                li {
+                    max-width: 160px;
+                    padding: 5px 10px;
+                    margin: 3px;
+                    border-radius: 100px;
+                    display: inline-block;
+                    background-color: rgba($mainColor, 0.3);
+
+                    font-weight: bold;
+                    list-style: none;
+
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    transition: $transition;
+                    cursor: pointer;
+
+                    &:hover {
+                        opacity: 0.7;
+                        background-color: rgba($errorColor, 0.3);
+                    }
+                }
+            }
+        }
+
+        .create-class {
+            @include flex($just: space-between);
+
+            &-btn {
+                @include button(16px, 8px);
+            }
+
+            &-cancel {
+                @include button(16px, 8px, $errorColor);
+            }
+        }
+    }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" class="sign" data-sign-action="<%= action %>">
+    <%- include("partials/head") %>
+
+    <!---->
+    <% const actionName = action[0].toUpperCase() + action.substring(1); %>
+
+    <body>
+        <!-- Signup Form -->
+        <form class="sign-field">
+            <header>
+                <h1><%= actionName %></h1>
+                <a href="/">
+                    <img src="./images/logo.png" alt="Logo" />
+                </a>
+            </header>
+
+            <section class="pass-field">
+                <p class="error-field"></p>
+
+                <div class="input-field">
+                    <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                        class="username-input"
+                    />
+                </div>
+
+                <div class="input-field">
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                        class="password-input pass-input"
+                    />
+
+                    <div class="pass-icon">
+                        <i class="fa-solid fa-eye-slash password-shown"></i>
+                        <i class="fa-solid fa-eye password-hidden"></i>
+                    </div>
+                </div>
+
+                <% if (action == "signup") { %>
+                <div class="input-field">
+                    <input
+                        type="password"
+                        name="repassword"
+                        placeholder="Confirm password"
+                        class="repassword-input pass-input"
+                    />
+                </div>
+
+                <div class="input-field gender-field">
+                    <input
+                        type="hidden"
+                        name="gender"
+                        value=""
+                        class="gender-input"
+                    />
+
+                    <div class="selection" data-gender-selection="male">
+                        <div class="option"></div>
+                        <strong>Male</strong>
+                    </div>
+
+                    <div class="selection" data-gender-selection="female">
+                        <div class="option"></div>
+                        <strong>Female</strong>
+                    </div>
+                </div>
+                <% } %>
+
+                <div class="input-field">
+                    <button type="button" class="submit-btn">
+                        <%= actionName %>
+                    </button>
+                </div>
+            </section>
+        </form>
+
+        <!-- Blobs -->
+        <img
+            src="./images/blobs/blob-one.svg"
+            alt="blob blob-one"
+            class="blob blob-one"
+        />
+
+        <img
+            src="./images/blobs/blob-two.svg"
+            alt="Blob"
+            class="blob blob-two"
+        />
+
+        <!-- Scripts -->
+        <script src="./scripts/sign.js" defer></script>
+    </body>
+</html>

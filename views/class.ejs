@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    class="class"
+    data-class-theme="<%= classData.classTheme %>"
+    data-class-id="<%= classData._id %>"
+    data-class-name="<%= classData.className %>"
+>
+    <%- include("partials/head") %>
+
+    <body>
+        <!-- Header -->
+        <%- include("partials/header") %>
+
+        <main>
+            <div class="class-info">
+                <div class="class-info-left">
+                    <div
+                        class="class-box"
+                        data-class-theme="<%= classData.classTheme %>"
+                        title="<%= classData.className %>"
+                    >
+                        <p><%= classData.className %></p>
+                    </div>
+
+                    <div class="class-text">
+                        <h1><%= classData.className %></h1>
+
+                        <p>
+                            <span class="students-number">
+                                <%= classData.classStudents.length %>
+                            </span>
+                            <% if (classData.classStudents.length == 1) { %>
+                            <span>student</span>
+                            <% } else { %>
+                            <span>students</span>
+                            <% } %>
+                        </p>
+
+                        <p>
+                            Created at
+                            <span
+                                class="format-date"
+                                data-format-date="<%= classData.createdAt %>"
+                            ></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="class-info-right">
+                    <button class="add-student-btn">
+                        <span>Add Student</span>
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+
+                    <button class="edit-class-btn">
+                        Edit Class <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                    <button class="delete-class-btn">
+                        Delete Class <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="class-students">
+                <div class="class-students-tabs">
+                    <div class="tab-btns">
+                        <button class="students-tab-btn">Students</button>
+                        <button class="heros-tab-btn">Heros</button>
+                    </div>
+                    <div class="tab-line"></div>
+                </div>
+                <div class="class-students-main">
+                    <% classStudents.forEach(student => { %>
+                    <div
+                        class="student"
+                        title="<%= student.name %>"
+                        style="background-color: <%= student.gender == 'male' ? '#60CFFF' : '#FFA0F0' %>;"
+                        data-student-id="<%= student._id %>"
+                        data-student-gender="<%= student.gender %>"
+                    >
+                        <img
+                            src="./images/characters/<%= student.avatar %>.png"
+                            alt="Student Character"
+                            class="student-avatar"
+                        />
+
+                        <h2 class="student-name"><%= student.name %></h2>
+
+                        <h3 class="student-points"><%= student.points %></h3>
+                    </div>
+                    <% }); %>
+                </div>
+                <div class="class-students-heros"></div>
+            </div>
+
+            <strong class="no-content">No Students</strong>
+        </main>
+
+        <section class="student-popup">
+            <div class="main">
+                <img src="" alt="Student Avatar" class="student-avatar" />
+                <h3 class="student-name"></h3>
+                <h2 class="student-points"></h2>
+                <div class="pointing">
+                    <input type="text" class="points-input" placeholder="241" />
+                    <div>
+                        <button class="points-dec">
+                            <i class="fa-solid fa-minus"></i>
+                        </button>
+                        <button class="points-inc">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+                <button class="student-card-nav-btn">
+                    Edit student <i class="fa-solid fa-pen"></i>
+                </button>
+            </div>
+
+            <div class="settings">
+                <h2>Edit Student</h2>
+                <div class="input-field">
+                    <input
+                        type="text"
+                        placeholder="Student Name"
+                        class="student-name-input"
+                    />
+                </div>
+                <div class="input-field">
+                    <input type="hidden" class="student-gender-input" />
+                    <button class="male-btn" type="button">
+                        Male <i class="fa-solid fa-mars"></i>
+                    </button>
+                    <button class="female-btn" type="button">
+                        Female <i class="fa-solid fa-venus"></i>
+                    </button>
+                </div>
+                <div class="input-field">
+                    <button class="save-btn" type="button">Save</button>
+                </div>
+
+                <div class="line"></div>
+                <div class="input-field">
+                    <button class="delete-student-btn">
+                        Delete Student <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+                <button class="student-card-nav-btn">
+                    <i class="fa-solid fa-arrow-left-long"></i> Back
+                </button>
+            </div>
+        </section>
+
+        <!-- Add Student Popup -->
+        <div class="new-student popup-format">
+            <h2>Add New Student</h2>
+            <div class="content">
+                <input
+                    type="text"
+                    class="new-name popup-format-text-input"
+                    placeholder="Swordax Sy"
+                />
+                <input type="hidden" class="new-gender" />
+                <div class="new-gender-selection">
+                    <aside class="new-gender-selection-male">
+                        <div></div>
+                        <p>Male</p>
+                    </aside>
+                    <aside class="new-gender-selection-female">
+                        <div></div>
+                        <p>Female</p>
+                    </aside>
+                </div>
+            </div>
+            <button class="new-add popup-format-submit-btn">Add Student</button>
+        </div>
+
+        <!-- Edit Class Popup -->
+        <div class="edit-class popup-format">
+            <h2>Edit Class</h2>
+            <div class="content">
+                <input
+                    type="text"
+                    class="edit-name popup-format-text-input"
+                    placeholder="Gr.12B1"
+                    value="<%= classData.className %>"
+                />
+                <div class="edit-theme-selection">
+                    <label for="classTheme">Class Theme</label>
+                    <input
+                        type="color"
+                        id="classTheme"
+                        class="edit-theme"
+                        value="<%= classData.classTheme %>"
+                    />
+                </div>
+            </div>
+            <button class="edit-class-submit popup-format-submit-btn">
+                Update Class
+            </button>
+        </div>
+
+        <!-- Confirmation Popup -->
+        <div class="confirmation">
+            <div class="content">
+                <h2>Confirm</h2>
+                <h3 class="message"></h3>
+                <div>
+                    <button class="confirm">Yes</button>
+                    <button class="deconfirm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Darken Effect -->
+        <div class="darken"></div>
+
+        <!-- Scripts -->
+        <script src="./scripts/classBoxStyle.js" defer></script>
+        <script src="./scripts/class/selectors.js" defer></script>
+        <script src="./scripts/class/funcs.js" defer></script>
+        <script src="./scripts/class/studentOperations.js" defer></script>
+        <script src="./scripts/class/studentConstructor.js" defer></script>
+        <script src="./scripts/class/classOperations.js" defer></script>
+        <script src="./scripts/class/class.js" defer></script>
+    </body>
+</html>

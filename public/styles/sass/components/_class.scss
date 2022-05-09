@@ -1,0 +1,502 @@
+@use "../abstracts" as *;
+
+.class {
+    main {
+        width: 80%;
+        margin: auto;
+    }
+
+    .class {
+        &-info {
+            @include flex($just: space-around, $wrap: wrap);
+
+            padding: 30px 0;
+
+            &-left {
+                @include flex($wrap: wrap);
+
+                .class-text {
+                    h1 {
+                        margin-bottom: 20px;
+                        max-width: 300px;
+                    }
+                }
+            }
+
+            &-right {
+                @include flex($just: space-between, $dir: column);
+
+                padding: 20px 0;
+
+                button {
+                    @include flex($just: space-between);
+
+                    &:first-child {
+                        @include button($color: $mainColor);
+                    }
+
+                    &:nth-child(2) {
+                        @include button($color: $specialColor);
+                    }
+
+                    &:last-child {
+                        @include button($color: $errorColor);
+                    }
+
+                    outline: none;
+                    border: none;
+
+                    width: 200px;
+                    padding: 8px 12px;
+                    margin: 10px;
+
+                    cursor: pointer;
+                    transition: $transition;
+                }
+            }
+        }
+
+        &-students {
+            background-color: rgba($mainColor, 0.2);
+            border-radius: 30px 30px 0 0;
+            overflow: hidden;
+            position: relative;
+
+            &.empty {
+                display: none;
+            }
+
+            &.onheros {
+                .class-students-main {
+                    display: none;
+                }
+                .class-students-heros {
+                    display: flex;
+                }
+            }
+
+            &-tabs {
+                .tab-btns {
+                    @include flex;
+
+                    button {
+                        width: 50%;
+                        height: 40px;
+
+                        border: none;
+                        outline: none;
+
+                        font-size: 22px;
+                        font-weight: bold;
+                        color: inherit;
+                        background-color: transparent;
+
+                        cursor: pointer;
+                        transition: $transition;
+                    }
+                }
+
+                .tab-line {
+                    width: 50%;
+                    height: 4px;
+                    background-color: white;
+
+                    transition: $transition;
+
+                    &.active {
+                        transform: translateX(100%);
+                    }
+                }
+            }
+
+            &-main {
+                @include flex($wrap: wrap);
+
+                padding: 20px;
+                transition: $transition;
+
+                .student {
+                    @include flex($dir: column);
+
+                    width: 160px;
+                    height: 160px;
+                    border-radius: 20px;
+
+                    padding: 10px;
+                    margin: 30px;
+
+                    cursor: pointer;
+                    transition: $transition;
+
+                    img {
+                        width: 60px;
+                    }
+
+                    h2 {
+                        width: 160px;
+
+                        font-size: 18px;
+                        text-align: center;
+                        padding: 4px 0;
+
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    &:hover {
+                        transform: scale(1.05) rotate(5deg);
+                    }
+                }
+            }
+
+            &-heros {
+                height: 600px;
+                padding: 20px;
+
+                display: none;
+                position: relative;
+
+                transition: $transition;
+
+                .hero-box {
+                    @include flex($dir: column);
+
+                    position: absolute;
+                    top: 280px;
+
+                    width: 220px;
+                    height: 220px;
+                    border-radius: 24px;
+                    background-color: $specialColor;
+
+                    --scale: 0;
+
+                    img {
+                        width: 80px;
+                    }
+
+                    h2 {
+                        width: 200px;
+                        flex-shrink: 0;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+
+                    .hero-medal {
+                        margin: 10px;
+                    }
+
+                    &:last-child {
+                        right: 10%;
+                        transform: rotate(10deg) scale(calc(var(--scale) + 1));
+                        background-color: #cd7f32;
+                    }
+                    &:nth-child(2) {
+                        left: 10%;
+                        transform: rotate(-10deg) scale(calc(var(--scale) + 1));
+                        background-color: #c0c0c0;
+                    }
+                    &:first-child {
+                        top: 120px;
+                        left: 50%;
+                        transform: translateX(-50%)
+                            scale(calc(var(--scale) + 1.3));
+                        background-color: #ffd700;
+                    }
+                }
+            }
+        }
+    }
+
+    .student-popup {
+        @include flex($just: flex-start, $align: flex-start);
+
+        width: 280px;
+        border-radius: 20px;
+
+        background-color: white;
+        color: black !important;
+
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
+
+        max-height: 480px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        z-index: 3;
+        transition: $transition;
+
+        &.active {
+            transform: translate(-50%, 20px);
+        }
+
+        .main,
+        & .settings {
+            @include flex($dir: column);
+
+            flex-shrink: 0;
+            padding: 20px;
+            width: calc(100% - 40px);
+
+            transition: $transition;
+        }
+
+        &.onsettings {
+            .main,
+            & .settings {
+                transform: translateX(-100%);
+            }
+        }
+
+        .main {
+            > * {
+                margin: 5px 0;
+                text-align: center;
+            }
+
+            img {
+                width: 120px;
+            }
+
+            h3 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 40px;
+                color: $specialColor;
+            }
+
+            .pointing {
+                @include flex($just: space-evenly);
+
+                width: 100%;
+
+                input {
+                    width: 40px;
+                    padding: 10px;
+                    border: 1px solid black;
+                    border-radius: 8px;
+                    font-size: 20px;
+                    text-align: center;
+                    outline: none;
+                }
+
+                button {
+                    width: 40px;
+                    height: 40px;
+
+                    &:first-child {
+                        @include button($color: $errorColor);
+                    }
+
+                    &:last-child {
+                        @include button($color: $mainColor);
+                    }
+                }
+            }
+        }
+
+        .settings {
+            h2 {
+                padding-bottom: 40px;
+            }
+
+            .line {
+                width: 80%;
+                margin: auto;
+                height: 1px;
+                background-color: black;
+                margin: 20px 0;
+            }
+
+            .input-field {
+                @include flex($just: space-evenly);
+
+                width: 100%;
+                padding: 10px 0;
+
+                input[type="text"] {
+                    padding: 4px 8px;
+                    border-radius: 6px;
+                    border: 1px solid black;
+                    outline: none;
+                    font-size: 18px;
+                }
+
+                button {
+                    @include button($fontSize: 16px, $borderRadius: 8px);
+
+                    &.inactive {
+                        opacity: 0.3;
+                        pointer-events: none;
+                    }
+
+                    &.male-btn,
+                    &.female-btn {
+                        background-image: none;
+                        &:hover {
+                            transform: scale(1.03);
+                        }
+                    }
+
+                    &.male-btn {
+                        background-color: $maleColor;
+                    }
+                    &.female-btn {
+                        background-color: $femaleColor;
+                    }
+
+                    &.save-btn.saved {
+                        background-image: linear-gradient(
+                            to right,
+                            lime,
+                            lighten(lime, 20%)
+                        );
+                    }
+
+                    &.delete-student-btn {
+                        background-image: linear-gradient(
+                            to right,
+                            $errorColor,
+                            lighten($errorColor, 20%)
+                        );
+                    }
+                }
+            }
+        }
+
+        .student-card-nav-btn {
+            @include button($color: $specialColor, $fontSize: 16px);
+            margin-top: 20px;
+        }
+    }
+
+    .popup-format {
+        @include flex($dir: column);
+
+        position: fixed;
+        top: 0;
+        left: 50%;
+
+        width: 280px;
+        padding: 10px;
+        border-radius: 14px;
+
+        background-color: white;
+        color: black !important;
+
+        transition: $transition;
+        transform: translate(-50%, -100%);
+        z-index: 3;
+
+        .content {
+            @include flex($dir: column);
+            padding: 20px 0;
+        }
+
+        &.active {
+            transform: translate(-50%, 20px);
+        }
+
+        &-text-input {
+            width: 80%;
+            padding: 4px 8px;
+            border-radius: 10px;
+            border: none;
+            background-color: rgba(black, 0.05);
+            outline: none;
+            font-size: 20px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        &.new-student {
+            .popup-format-submit-btn {
+                @include button($fontSize: 16px, $borderRadius: 8px);
+            }
+        }
+        &.edit-class {
+            .popup-format-submit-btn {
+                @include button(
+                    $fontSize: 16px,
+                    $borderRadius: 8px,
+                    $color: $specialColor
+                );
+            }
+        }
+
+        .new-gender-selection {
+            @include flex;
+
+            aside {
+                @include flex;
+
+                margin: 0 10px;
+                cursor: pointer;
+                transition: $transition;
+                opacity: 0.7;
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                p {
+                    font-weight: bold;
+                }
+
+                div {
+                    width: 16px;
+                    height: 16px;
+                    border: 2px solid;
+                    border-radius: 50%;
+                    margin-right: 6px;
+                    transition: $transition;
+                }
+            }
+
+            &-male {
+                color: $maleColor;
+
+                div {
+                    border-color: $maleColor;
+                }
+
+                &.active {
+                    div {
+                        background-color: $maleColor;
+                    }
+                }
+            }
+
+            &-female {
+                color: $femaleColor;
+
+                div {
+                    border-color: $femaleColor;
+                }
+
+                &.active {
+                    div {
+                        background-color: $femaleColor;
+                    }
+                }
+            }
+        }
+
+        .edit-theme-selection {
+            @include flex($just: space-around);
+            width: 100%;
+
+            input {
+                border: none;
+            }
+        }
+    }
+}

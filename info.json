@@ -1,0 +1,195 @@
+{
+    "project_info": {
+        "project_name": "HeroApp",
+        "project_version": "V1.0.0",
+        "project_description": "HeroApp student crediting platform",
+        "project_development_start": "19 April, 2022",
+        "project_development_end": "9 May, 2022",
+        "project_devlopment_duration": "56:00 (21 days)",
+        "project_github_repo": "https://github.com/SwordaxSy/HeroApp"
+    },
+    "developer_info": {
+        "developer": "Swordax",
+        "developer_at": "@swordax.sy",
+        "developer_discord": "https://discord.com/users/465453058667839499/",
+        "developer_discord_id": "Swordax#5756",
+        "developer_github": "https://github.com/SwordaxSy",
+        "developer_website": "https://swordax.netlify.app"
+    },
+    "project_updates": {
+        "19_April_2022": [
+            "Started developing HeroApp project",
+            "Created project files and npm installed dependencies",
+            "Wrote the building block of the app",
+            "Setup database",
+            "Wrote user schema"
+        ],
+        "20_April_2022": [
+            "Built a part of the authentication system",
+            "Created the SASS files",
+            "Generated blob images",
+            "Completed the home page"
+        ],
+        "21_April_2022": [
+            "Created signup.ejs",
+            "Wrote the markup structure of the signup page"
+        ],
+        "22_April_2022": [
+            "Created a new button mixin",
+            "Modified the styling of the signup button in the home page",
+            "Created signup.scss",
+            "Completed styling signup.ejs page",
+            "Completed the front-end dynamic behaviour of the signup page",
+            "Created validateUser.js to vaidate data passed by users to sign up",
+            "Completed the signup API system in the back-end and it's client-side handler"
+        ],
+        "23_April_2022": [
+            "Created app.ejs and _app.scss and started working on the app page",
+            "Prettified EJS and SASS files",
+            "Made changes to app classes section structure and styling",
+            "Added class searching feature in the app main page",
+            "Replaced the teacher profile from being held through user id to being held through the username"
+        ],
+        "24_April_2022": [
+            "Made some changes to the class box styling",
+            "Created a popup form for creating a new class",
+            "Created a darken effect for the popup form",
+            "Completed styling and making the class creating form dynamic",
+            "Completed the core process of creating a new class both at front-end and back-end sides",
+            "Modified signup.ejs and signup.js to support both signup and login processes",
+            "Changed the name 'signup' in signup.ejs, signup.scss, and signup.js to 'sign' indicating signup or signin",
+            "Built the login system in the backend side",
+            "Created ./public/scripts/HEXtoHSL.js and included code that converts hex colors to hsl colors",
+            "Wrote code to style the classes boxes dynamically according to the class theme",
+            "Redirected users to /class/${class_identification_number} page when clicking on a class box or after creating a new class"
+        ],
+        "25_April_2022": [
+            "Separated the box styling code into its own script file in ./public/scripts",
+            "Separated the app header into its own file in ./views/partials",
+            "Created 404 page (fof.ejs) and mounted it on the application route control",
+            "Created class page (class.ejs) and mounted it on the application route control",
+            "Did a small modification to the button mixin to support dynamic colors",
+            "Finished the header part basic initial markup and styling in class.ejs",
+            "Created util.js file for utility functions",
+            "Replaced the call for script.js with a call to util.js in the head partial, and defered the call",
+            "Moved the color utilities functions to util.js",
+            "Built HEXtoRGB method in util.js",
+            "Built the date formatting function inside util.js",
+            "Made the created at field in the class page dynamic",
+            "Made the background color and the text color of the class page dynamic and dependent on the class theme",
+            "Added class-students div in the class page (class.ejs), styled it, and made it dynamic"
+        ],
+        "26_April_2022": [
+            "Fixed a bug caused by not defering script tags in ./public/scripts/app.js",
+            "Changed 'Clear Class' button to 'Edit Class' and modified it's background-color to a shade of yellow/orange"
+        ],
+        "27_April_2022": [
+            "Created student-popup, styled it, and made it dynamic",
+            "Completed student points increment/decrement API in the back-end",
+            "Completed the student boxes sorting function according to their points",
+            "Structured & styled the student settings section in the student card",
+            "Made the student settings card dynamic and interactive with the backend API",
+            "Built the back-end API for the student settings/editing and completed it"
+        ],
+        "28_April_2022": [
+            "Created confirmation div, styled it, and made it dynamic",
+            "Mounted the confirmation div layer on the student deleting process",
+            "Made the students number indicator dynamic and sensitive to student delete action",
+            "Made changes in the styling of the confirmation popup in order to decrease the lags",
+            "Added class verification in the require teacher auth function",
+            "Built the front-end and back-end operations of deleting a class and completed it",
+            "Changed the PUT requests to PATCH requests",
+            "Created a popup to add new student to classes, styled it, made it dynamic, and mounted it on the app",
+            "Created an API route in the backend to process creating new students",
+            "Completed the handling of the student adding API on both front-end and back-end sides",
+            "Changed no-students name to no-content, moved it's styling to _general.scss, and moved it's JS into util.js",
+            "Changed the name of setNoStudents() to setNoContent() and changes it's behavious to make it universal",
+            "Added no-content to ./views/app.js so that when no classes are present, `No Classes` message will appear"
+        ],
+        "29_April_2022": ["Modulized project client-side code for class page"],
+        "30_April_2022": [
+            "Modified the appearance way of the confirmation box",
+            "Created the edit-class popup, styled it, and made it dynamic",
+            "Created a folder for classOperations and moved the class operating code into it (an extending of the modulizing process of 28_April_2022 update)",
+            "Built the front-end handling and the back-end API route of the class editing process",
+            "Solved the cards animation lagging problem",
+            "INcreased the class-box size and decrased it's padding",
+            "Modified the algorithm that selects the text color depending on the background-color"
+        ],
+        "1_May_2022": [
+            "Created routes directory and created classRoutes.js and studentRoutes.js in it",
+            "Moved class and student routes from app.js to their dedicated files in ./routes (using express router)",
+            "Created ./middlewares/generateNames.js and moved the class naming function and the avatar selection function to it",
+            "Created the profile.ejs view and mounted it on the app",
+            "Fixed student popup padding",
+            "Fixed incorrect student name on the student box tooltip",
+            "Added name tooltips on the class boxes in app.ejs and class.ejs",
+            "Created student edit saved effect",
+            "Created tabs control in the students box",
+            "Created heros section, styled it, made it dynamic, and completed it",
+            "Added new female characters/avatars"
+        ],
+        "2_May_2022": [
+            "Wrote the profile page strucutre and styled it",
+            "Made the content inside the profile page dynamic",
+            "Completed the profile page",
+            "Created the edit profile page"
+        ],
+        "3_May_2022": [
+            "Improved client-side JS code",
+            "Completed the structure and the styling of the profile page",
+            "Done most of the work on the dynamics of the edit page",
+            "Wrote the API routes for the edit page requests",
+            "Created an error field for the account editing process",
+            "Created ./routes/userRoutes.js and moved all user routes (post signup, post login, logout, edit username, edit password) into it",
+            "Completed both the back-end and the front-end of the edit username and edit password parts"
+        ],
+        "4_May_2022": [
+            "Made the password visibility toggler universal in the script.js file",
+            "Implemented the password visibility interaction in the edit page password fields",
+            "Created delete account popup and completed it",
+            "Completed the front-end and the back-end code of the account deleting process"
+        ],
+        "5_May_2022": [
+            "Added enter keydown form submit in sign page",
+            "Added logout confirmation layer",
+            "Fixed the `create new class` popup movement lag",
+            "Fixed a bug in the class schema that caused failure of updating student points",
+            "Created ./routes/pageRoutes.js and moved all page routes to it",
+            "Created leaderboard page view and route",
+            "Designed the basic structure of the leaderboard page using figma"
+        ],
+        "6_May_2022": [
+            "Structured the leaderboard page and styled it",
+            "Completed the search mechanism of the leaderboard",
+            "Separated students data from the class data for easier data querying",
+            "Created student collection schema",
+            "Removed classStudents field from class schema",
+            "Modified CRUD operations to be compatible with the new database structure"
+        ],
+        "7_May_2022": [
+            "Improved database schemas",
+            "Fixed a bug in heros section when updating a student",
+            "Made the leaderboard page dynamic"
+        ],
+        "8_May_2022": [
+            "Worked on the responsive design of the leaderboard page",
+            "Completed the responsive design of the home page",
+            "Completed the responsive design of the hero header",
+            "Worked on the responsive design of the class page"
+        ],
+        "9_May_2022": [
+            "Completed the responsive design of the class page",
+            "Completed the responsive design of the leaderboard page",
+            "Added auto focus on the search input in the leaderboard page",
+            "Fixed a bug where the class theme input is not reset correctly",
+            "Fixed a bug where when deleting the account, teacher's students are not deleted",
+            "Filled home contact links",
+            "Added vendor prefixes to the output CSS files",
+            "Added a README.md file",
+            "Added a .gitignore file",
+            "Finalized the code",
+            "Completed the development of HeroApp V1.0.0"
+        ]
+    }
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" class="profile">
+    <%- include("partials/head") %>
+
+    <body>
+        <!-- Header -->
+        <%- include("partials/header") %>
+
+        <!-- Teacher Avatar -->
+        <% let avatar = locals.gender == "male" ? "yousif" : "mariam"; %>
+
+        <!-- Main Page Content -->
+        <main>
+            <div class="account-info">
+                <img
+                    src="./images/characters/<%= avatar %>.png"
+                    alt="Teacher Avatar"
+                    class="account-info-avatar"
+                />
+
+                <div class="account-info-content">
+                    <h1><%= locals.username %></h1>
+
+                    <div class="account-info-content-bottom">
+                        <div class="info">
+                            <p>Male teacher</p>
+
+                            <p>
+                                Joined HeroApp at
+                                <span
+                                    class="format-date"
+                                    data-format-date="<%= locals.createdAt %>"
+                                ></span>
+                            </p>
+                        </div>
+
+                        <a href="/profile/edit"
+                            >Edit Account <i class="fa-solid fa-pen"></i
+                        ></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="account-stats">
+                <h2>
+                    <%= classesNumber %> classes
+                    <i class="fa-solid fa-school"></i>
+                </h2>
+
+                <h2>
+                    <%= studentsNumber %> students
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </h2>
+            </div>
+        </main>
+    </body>
+</html>

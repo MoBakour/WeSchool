@@ -1,0 +1,35 @@
+{
+    "name": "heroapp",
+    "version": "1.0.0",
+    "description": "HeroApp student crediting platform",
+    "main": "app.js",
+    "type": "module",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "keywords": [
+        "hero",
+        "heroapp",
+        "student",
+        "crediting",
+        "management",
+        "app",
+        "school",
+        "college",
+        "university"
+    ],
+    "author": "Swordax",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "cookie-parser": "^1.4.6",
+        "dotenv": "^16.0.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.3",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.3.2"
+    },
+    "devDependencies": {
+        "sass": "^1.51.0"
+    }
+}

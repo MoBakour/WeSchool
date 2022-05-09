@@ -1,0 +1,27 @@
+@use "./variables" as *;
+
+@mixin flex($just: center, $align: center, $dir: row, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+@mixin button($fontSize: 20px, $borderRadius: 12px, $color: $mainColor) {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: $fontSize;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    transition: $transition;
+    background-size: 170% 100%;
+    background-position: left;
+    background-image: linear-gradient(to right, $color, lighten($color, 20%));
+    &:hover {
+        background-position: right;
+    }
+}

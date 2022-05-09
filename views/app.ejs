@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="app">
+    <%- include("partials/head") %>
+
+    <body>
+        <!-- Header -->
+        <%- include("partials/header") %>
+
+        <main>
+            <div class="search-class">
+                <i class="fa-solid fa-magnifying-glass search-class-icon"></i>
+
+                <input
+                    type="text"
+                    placeholder="Search class"
+                    class="search-class-input"
+                />
+            </div>
+
+            <div class="classes">
+                <% classes.forEach(cls => { %>
+                <a
+                    href="class/<%= cls._id.toString() %>"
+                    data-class-theme="<%= cls.classTheme %>"
+                    title="<%= cls.className %>"
+                    class="class-box"
+                >
+                    <p><%= cls.className %></p>
+                </a>
+                <% }); %>
+            </div>
+
+            <strong class="no-content" style="color: white">No Classes</strong>
+        </main>
+
+        <!-- Create Class -->
+        <form class="create-class-form">
+            <h2>Create new class</h2>
+            <section>
+                <label for="className">Class name</label>
+                <input
+                    type="text"
+                    id="className"
+                    class="class-name"
+                    placeholder="Programming Course"
+                />
+            </section>
+            <section>
+                <label for="classTheme">Class theme</label>
+                <input
+                    type="color"
+                    id="classTheme"
+                    class="class-theme"
+                    value="#00c8a4"
+                />
+            </section>
+            <section>
+                <label for="classStudents">Class students</label>
+                <ul class="class-students-list"></ul>
+                <input
+                    type="text"
+                    id="classStudents"
+                    class="class-students"
+                    placeholder="Joe"
+                />
+            </section>
+            <section class="create-class">
+                <button class="create-class-btn" type="button">
+                    Create class
+                </button>
+                <button class="create-class-cancel" type="button">
+                    Cancel
+                </button>
+            </section>
+        </form>
+
+        <!-- Confirmation Popup -->
+        <div class="confirmation">
+            <div class="content">
+                <h2>Confirm</h2>
+                <h3 class="message"></h3>
+                <div>
+                    <button class="confirm">Yes</button>
+                    <button class="deconfirm">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Darken Effect -->
+        <div class="darken"></div>
+
+        <!-- Scripts -->
+        <script src="./scripts/classBoxStyle.js" defer></script>
+        <script src="./scripts/app.js" defer></script>
+    </body>
+</html>
