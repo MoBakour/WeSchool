@@ -2,13 +2,9 @@
 
 // home page styling
 .home {
-    .home-wrapper {
-        overflow-x: hidden;
-        position: relative;
-    }
-
     section {
         height: 100vh;
+        max-width: 100vw;
     }
 
     // Landing Screen
