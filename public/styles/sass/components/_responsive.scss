@@ -63,25 +63,33 @@
                 }
             }
         }
+    }
 
-        .ranking .container {
-            flex-direction: column !important;
-            width: 100% !important;
+    .profile .account-stats {
+        flex-direction: column !important;
 
-            .text {
-                @include flex($dir: column);
-                margin-bottom: 40px;
-
-                p {
-                    padding: 0;
-                    text-align: center;
-                }
-            }
+        h2:first-child {
+            margin-bottom: 10px;
         }
     }
 }
 
 @media (max-width: 900px) {
+    .ranking .container {
+        flex-direction: column !important;
+        width: 100% !important;
+
+        .text {
+            @include flex($dir: column);
+            margin-bottom: 40px;
+
+            p {
+                padding: 0;
+                text-align: center;
+            }
+        }
+    }
+
     .class {
         main {
             width: 90%;
@@ -284,6 +292,28 @@
         }
     }
 
+    .profile main {
+        .account-info {
+            flex-direction: column;
+
+            &-avatar {
+                margin-right: 0;
+            }
+
+            &-content {
+                align-items: center;
+            }
+        }
+
+        .account-stats {
+            margin-top: 20px;
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+    }
+
     .leaderboard main {
         .search {
             flex-direction: column;
@@ -365,6 +395,10 @@
                 transform: scale(calc(var(--scale) + 1));
             }
         }
+    }
+
+    .create-class-form {
+        width: 260px !important;
     }
 
     .leaderboard main {

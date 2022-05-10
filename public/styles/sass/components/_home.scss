@@ -2,14 +2,12 @@
 
 // home page styling
 .home {
-    &,
-    .home body {
-        overflow: hidden;
-        scroll-behavior: smooth;
+    .home-wrapper {
+        overflow-x: hidden;
+        position: relative;
     }
 
     section {
-        width: 100vw;
         height: 100vh;
     }
 
@@ -246,44 +244,6 @@
         }
     }
 
-    // Scroller
-    .scroller {
-        @include flex($dir: column);
-
-        position: fixed;
-        top: 50%;
-        right: 20px;
-        transform: translateY(-50%);
-
-        border-radius: 100px;
-        overflow: hidden;
-
-        > button {
-            border: none;
-            outline: none;
-
-            width: 100%;
-            padding: 0 12px;
-            background-color: rgba(white, 0.6);
-            font-size: 24px;
-
-            cursor: pointer;
-            transition: $transition;
-
-            &:hover {
-                background-color: white;
-            }
-        }
-
-        &-up {
-            padding-top: 16px !important;
-        }
-
-        &-down {
-            padding-bottom: 16px !important;
-        }
-    }
-
     // Blobs
     .blob {
         &-one {
@@ -303,6 +263,7 @@
             top: 120%;
             left: 10%;
         }
+
         &-four {
             width: 40vw;
             top: 280%;

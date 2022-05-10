@@ -1,6 +1,6 @@
 {
     "name": "heroapp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "HeroApp student crediting platform",
     "main": "app.js",
     "type": "module",

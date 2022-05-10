@@ -6,7 +6,7 @@
         @include flex($dir: column);
 
         margin-top: 50px;
-        padding: 30px;
+        padding: 20px;
 
         .account-info {
             @include flex;
@@ -64,8 +64,10 @@
             width: 80%;
             margin-top: 60px;
 
-            color: $specialColor;
-            font-size: 32px;
+            h2 {
+                color: $specialColor;
+                font-size: 40px;
+            }
         }
     }
 }
