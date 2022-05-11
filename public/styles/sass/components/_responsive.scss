@@ -95,9 +95,9 @@
             width: 90%;
         }
 
-        &-students-heros {
+        .class-students-heros {
             .hero-box {
-                --scale: -0.3;
+                --scale: -0.3 !important;
             }
         }
     }
@@ -282,7 +282,7 @@
         }
     }
 
-    .class-students-heros .hero-box {
+    .class .class-students-heros .hero-box {
         &:nth-child(2) {
             left: 0 !important;
         }
@@ -359,7 +359,7 @@
         }
     }
 
-    .class-students-heros .hero-box {
+    .class .class-students-heros .hero-box {
         --scale: -0.4;
     }
 }
@@ -377,7 +377,7 @@
         }
     }
 
-    .class-students-heros {
+    .class .class-students-heros {
         flex-direction: column;
         align-items: center;
         height: unset;
