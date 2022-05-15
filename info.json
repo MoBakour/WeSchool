@@ -1,12 +1,12 @@
 {
     "project_info": {
         "project_name": "HeroApp",
-        "project_version": "V1.0.2",
+        "project_version": "V1.0.3",
         "project_description": "HeroApp student crediting platform",
         "project_development_start": "19 April, 2022",
         "project_development_end": "9 May, 2022",
         "project_devlopment_duration": "56:00 (21 days)",
-        "project_maintenance_duration": "00:45",
+        "project_maintenance_duration": "00:50",
         "project_github_repo": "https://github.com/SwordaxSy/HeroApp"
     },
     "developer_info": {
@@ -201,6 +201,10 @@
         "11_May_2022": [
             "[Class Page] fixed issues in the responsive design of the hero students section",
             "Published HeroApp V1.0.2"
+        ],
+        "16_May_2022": [
+            "[Student Model] added a missing 'new' keyword when creating the schema",
+            "Published HeroApp V1.0.3"
         ]
     }
 }

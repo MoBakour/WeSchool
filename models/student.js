@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 // student schema object
-const studentSchema = mongoose.Schema({
+const studentSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
