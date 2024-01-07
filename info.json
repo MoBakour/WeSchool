@@ -1,7 +1,7 @@
 {
     "project_info": {
         "project_name": "HeroApp",
-        "project_version": "V1.2.0",
+        "project_version": "V1.3.0",
         "project_description": "HeroApp student crediting platform",
         "project_development_start": "19 April, 2022",
         "project_development_end": "9 May, 2022",
@@ -219,17 +219,7 @@
             "Created the rewards page and coded the rewards roulette",
             "Hide students with 0 points from the leaderboard table",
             "Published HeroApp V1.2.0"
-        ]
-    },
-    "CHANGE_REFERENCE": [
-        "[routes/userRoutes.ks] user account editing actions returning an unauthorization error",
-        "[views/profile.ejs] commented teacher name and changed avatar tag src and style attributes",
-        "[views/partials/header.ejs] changed avatar tag src",
-        "[views/leaderboard.ejs] changed 'Teacher' to 'School'",
-        "[views/class.ejs] hide the points input element",
-        "[public/scripts/class/studentOperations.js] set default points input value to 5",
-        "[public/styles/sass/components/_home.scss] added .by {} to style the new container",
-        "[public/styles/sass/components/_responsive.sass] added .by {} responsive design",
-        "[views/home.ejs] added .by div and set the original contact div to display none"
-    ]
+        ],
+        "7_Jan_2024": ["Fixed some stuff", "Published HeroApp V1.3.0"]
+    }
 }

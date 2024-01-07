@@ -4,9 +4,13 @@
             <img src="./images/logo.png" alt="Logo" />
         </a>
 
+        <% let avatar = locals.gender == "male" ? "yousif" : "mariam"; %>
+
         <a href="/profile" class="user">
-            <!-- Original Avatar Source: .src/images/characters/{yousif or mariam}.png -->
-            <img src="./images/awps-logo.png" alt="Teacher Avatar" />
+            <img
+                src="./images/characters/<%= avatar %>.png"
+                alt="Teacher Avatar"
+            />
             <p><%= locals.username %></p>
         </a>
     </div>

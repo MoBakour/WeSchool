@@ -16,13 +16,6 @@ import Student from "../models/student.js";
 // create router
 const router = express.Router();
 
-// unauthorize
-router.use((req, res, next) => {
-    if (req.url.includes("edit") || req.url.includes("delete") || req.url.includes("signup")) {
-        return res.status(401).json({ success: false, error: "Unauthorized operation" });
-    } else next();
-});
-
 // user signup
 router.post("/signup", denyLogged, async (req, res) => {
     const userData = req.body;

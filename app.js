@@ -1,13 +1,10 @@
-// import dependencies
 import express from "express";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-// import middlewares
 import { checkUser } from "./middlewares/authMiddleware.js";
 
-// import routes
 import pageRoutes from "./routes/pageRoutes.js";
 import classRoutes from "./routes/classRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
@@ -30,15 +27,13 @@ const DB_URI = process.env.DB_URI;
 export const SECRET = process.env.SECRET;
 
 // connect to db
-const db_connection_options = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-};
 mongoose
-    .connect(DB_URI, db_connection_options)
+    .connect(DB_URI, {
+        dbName: "HeroApp",
+    })
     .then(() => {
         app.listen(PORT, () => {
-            console.log(`app running at port ${PORT}`);
+            console.log(`server running on port ${PORT}`);
         });
     })
     .catch((err) => console.log(err));

@@ -164,33 +164,6 @@
 
         height: fit-content;
 
-        .by {
-            font-size: 50px;
-            color: $mainColor;
-            margin-bottom: 60px;
-            position: relative;
-
-            &::before,
-            &::after {
-                font-size: 20px;
-                position: absolute;
-                color: black;
-            }
-
-            &::before {
-                content: "Developed by";
-                top: 0;
-                left: 0;
-                transform: translate(-50%, -30px);
-            }
-            &::after {
-                content: "An AWPS student";
-                bottom: 0;
-                right: 0;
-                transform: translate(50%, 30px);
-            }
-        }
-
         .container {
             @include flex($dir: column, $just: space-evenly);
 
@@ -198,19 +171,20 @@
             // height: 100%;
 
             h3 {
-                font-size: 60px;
+                font-size: 40px;
                 text-align: center;
             }
 
             .contacts {
-                @include flex($just: space-evenly);
+                @include flex($just: center);
+                gap: 30px;
 
                 width: 100%;
 
                 a {
                     text-decoration: none;
                     cursor: pointer;
-                    font-size: 100px;
+                    font-size: 60px;
                     text-align: center;
                     opacity: 0.6;
                     transition: $transition;
