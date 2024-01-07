@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="rewards">
+    <%- include("partials/head") %>
+    <body>
+        <main class="active">
+            <div class="list-toggler active">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <section class="roller-container">
+                <img src="./images/arrow.png" alt="Arrow Pointer" />
+                <h1>Add rewards</h1>
+                <div class="roller"></div>
+                <div class="mouse-tip">Click to roll</div>
+            </section>
+            <section class="rewards-list">
+                <div class="top"></div>
+                <div class="bottom">
+                    <input
+                        type="text"
+                        placeholder="Eat in class"
+                        class="reward-input"
+                    />
+                    <button class="reward-submit">Add</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- Scripts -->
+        <script src="./scripts/rewards.js" defer></script>
+    </body>
+</html>

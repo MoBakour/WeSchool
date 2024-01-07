@@ -1,11 +1,12 @@
 {
     "name": "heroapp",
-    "version": "1.0.3",
+    "version": "1.2.0",
     "description": "HeroApp student crediting platform",
     "main": "app.js",
     "type": "module",
     "scripts": {
-        "start": "node app.js"
+        "start": "node app.js",
+        "build": "npm install && sass ./public/styles/sass/style.scss ./public/styles/css/style.css"
     },
     "keywords": [
         "hero",
@@ -27,9 +28,7 @@
         "ejs": "^3.1.6",
         "express": "^4.17.3",
         "jsonwebtoken": "^8.5.1",
-        "mongoose": "^6.3.2"
-    },
-    "devDependencies": {
-        "sass": "^1.51.0"
+        "mongoose": "^6.3.2",
+        "sass": "^1.69.7"
     }
 }

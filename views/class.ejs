@@ -104,7 +104,13 @@
                 <h3 class="student-name"></h3>
                 <h2 class="student-points"></h2>
                 <div class="pointing">
-                    <input type="text" class="points-input" placeholder="241" />
+                    <input
+                        type="text"
+                        tabindex="-1"
+                        class="points-input"
+                        placeholder="241"
+                        style="display: none"
+                    />
                     <div>
                         <button class="points-dec">
                             <i class="fa-solid fa-minus"></i>
@@ -126,28 +132,35 @@
                         type="text"
                         placeholder="Student Name"
                         class="student-name-input"
+                        tabindex="-1"
                     />
                 </div>
                 <div class="input-field">
-                    <input type="hidden" class="student-gender-input" />
-                    <button class="male-btn" type="button">
+                    <input
+                        type="hidden"
+                        class="student-gender-input"
+                        tabindex="-1"
+                    />
+                    <button class="male-btn" type="button" tabindex="-1">
                         Male <i class="fa-solid fa-mars"></i>
                     </button>
-                    <button class="female-btn" type="button">
+                    <button class="female-btn" type="button" tabindex="-1">
                         Female <i class="fa-solid fa-venus"></i>
                     </button>
                 </div>
                 <div class="input-field">
-                    <button class="save-btn" type="button">Save</button>
+                    <button class="save-btn" type="button" tabindex="-1">
+                        Save
+                    </button>
                 </div>
 
                 <div class="line"></div>
                 <div class="input-field">
-                    <button class="delete-student-btn">
+                    <button class="delete-student-btn" tabindex="-1">
                         Delete Student <i class="fa-solid fa-trash"></i>
                     </button>
                 </div>
-                <button class="student-card-nav-btn">
+                <button class="student-card-nav-btn" tabindex="-1">
                     <i class="fa-solid fa-arrow-left-long"></i> Back
                 </button>
             </div>

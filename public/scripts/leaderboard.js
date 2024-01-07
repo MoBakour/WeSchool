@@ -30,6 +30,7 @@ searchInput.addEventListener("input", () => {
 // auto focus on search input
 searchBy.addEventListener("input", () => {
     searchInput.focus();
+    searchInput.dispatchEvent(new Event("input", { bubbles: true, cancelable: true }));
 });
 
 // ellipses

@@ -18,7 +18,7 @@
                     <p>Search by</p>
                     <select class="search-by-select">
                         <option value="student">student</option>
-                        <option value="teacher">teacher</option>
+                        <option value="teacher">school</option>
                         <option value="class">class</option>
                     </select>
                 </div>
@@ -31,12 +31,14 @@
                         <th>Student</th>
                         <th>Points</th>
                         <th>Class</th>
-                        <th>Teacher</th>
+                        <th>School</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <% students.forEach((student, index) => { %>
+                    <!---->
+                    <% if (student.points !== 0) { %>
                     <tr>
                         <td><%= index + 1 %></td>
                         <td title="<%= student.name %>"><%= student.name %></td>
@@ -48,7 +50,7 @@
                             <%= student.classTeacher %>
                         </td>
                     </tr>
-                    <% }); %>
+                    <% }}); %>
                 </tbody>
             </table>
         </main>

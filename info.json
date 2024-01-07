@@ -1,12 +1,12 @@
 {
     "project_info": {
         "project_name": "HeroApp",
-        "project_version": "V1.0.3",
+        "project_version": "V1.2.0",
         "project_description": "HeroApp student crediting platform",
         "project_development_start": "19 April, 2022",
         "project_development_end": "9 May, 2022",
         "project_devlopment_duration": "56:00 (21 days)",
-        "project_maintenance_duration": "00:50",
+        "project_maintenance_duration": "09:40",
         "project_github_repo": "https://github.com/SwordaxSy/HeroApp"
     },
     "developer_info": {
@@ -205,6 +205,31 @@
         "16_May_2022": [
             "[Student Model] added a missing 'new' keyword when creating the schema",
             "Published HeroApp V1.0.3"
+        ],
+        "26_May_2022": [
+            "Fixed a bug that would appear in student popup when using mobile devices",
+            "Fixed an issue that the leaderboard filtered names wouldn't update when changing the searchBy until inputting in the value input",
+            "Did changes required to publish app for use in school",
+            "Wrote automation script for adding students automatically",
+            "Replaced developer contacts with developer name only in home contact section",
+            "Fourth blob in the home page is hidden",
+            "Published HeroApp V1.1.0"
+        ],
+        "29_May_2022": [
+            "Created the rewards page and coded the rewards roulette",
+            "Hide students with 0 points from the leaderboard table",
+            "Published HeroApp V1.2.0"
         ]
-    }
+    },
+    "CHANGE_REFERENCE": [
+        "[routes/userRoutes.ks] user account editing actions returning an unauthorization error",
+        "[views/profile.ejs] commented teacher name and changed avatar tag src and style attributes",
+        "[views/partials/header.ejs] changed avatar tag src",
+        "[views/leaderboard.ejs] changed 'Teacher' to 'School'",
+        "[views/class.ejs] hide the points input element",
+        "[public/scripts/class/studentOperations.js] set default points input value to 5",
+        "[public/styles/sass/components/_home.scss] added .by {} to style the new container",
+        "[public/styles/sass/components/_responsive.sass] added .by {} responsive design",
+        "[views/home.ejs] added .by div and set the original contact div to display none"
+    ]
 }

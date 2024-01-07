@@ -162,11 +162,40 @@
     .contact {
         @include flex;
 
+        height: fit-content;
+
+        .by {
+            font-size: 50px;
+            color: $mainColor;
+            margin-bottom: 60px;
+            position: relative;
+
+            &::before,
+            &::after {
+                font-size: 20px;
+                position: absolute;
+                color: black;
+            }
+
+            &::before {
+                content: "Developed by";
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -30px);
+            }
+            &::after {
+                content: "An AWPS student";
+                bottom: 0;
+                right: 0;
+                transform: translate(50%, 30px);
+            }
+        }
+
         .container {
             @include flex($dir: column, $just: space-evenly);
 
             width: 80%;
-            height: 100%;
+            // height: 100%;
 
             h3 {
                 font-size: 60px;
@@ -264,6 +293,7 @@
             width: 40vw;
             top: 280%;
             right: 10%;
+            display: none;
         }
     }
 }

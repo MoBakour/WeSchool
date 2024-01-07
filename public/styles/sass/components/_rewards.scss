@@ -1,0 +1,210 @@
+@use "../abstracts" as *;
+
+.rewards {
+    main {
+        min-height: 100vh;
+        display: flex;
+
+        .list-toggler {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 4;
+
+            display: none;
+
+            div {
+                position: relative;
+                width: 38px;
+                height: 4px;
+                background-color: black;
+                border-radius: 4px;
+                margin-bottom: 6px;
+            }
+
+            &.active {
+                div:first-child {
+                    transform: rotate(45deg);
+                    top: 10px;
+                }
+
+                div:nth-child(2) {
+                    display: none;
+                }
+
+                div:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+
+        section {
+            min-height: inherit;
+            overflow: hidden;
+            position: relative;
+
+            &.roller-container {
+                @include flex;
+                width: 70%;
+                position: relative;
+                cursor: pointer;
+
+                .mouse-tip {
+                    padding: 5px 10px;
+                    background-color: #323232;
+                    color: white;
+                    border-radius: 6px;
+                    font-size: 18px;
+                    opacity: 0.6;
+                    white-space: nowrap;
+                    position: absolute;
+                    z-index: -1;
+                    user-select: none;
+                }
+
+                img {
+                    width: 100px;
+                    position: absolute;
+                    transform: translateY(-240px);
+                    z-index: 2;
+
+                    display: block;
+                }
+
+                h1 {
+                    font-size: 30px;
+                    color: rgba(gray, 0.4);
+                    user-select: none;
+
+                    display: none;
+                }
+
+                &.empty {
+                    cursor: unset;
+
+                    img,
+                    .mouse-tip {
+                        display: none;
+                    }
+
+                    h1 {
+                        display: block;
+                    }
+                }
+
+                .roller {
+                    position: relative;
+
+                    .arm {
+                        min-width: 100px;
+                        height: 400px;
+                        min-width: 10px;
+                        position: absolute;
+
+                        transition: $rotation;
+                        --rotation: 0;
+                        transform: translate(-50%, -50%) rotate(var(--rotation));
+
+                        .box {
+                            min-width: 120px;
+                            padding: 14px;
+                            border-radius: 8px;
+                            background-color: rgba(white, 0.5);
+                            font-size: 20px;
+                            font-weight: bold;
+                            text-transform: uppercase;
+                            text-align: center;
+
+                            transition: $rotation;
+                            --rotation: 0;
+                            transform: rotate(var(--rotation));
+                        }
+                    }
+                }
+            }
+
+            &.rewards-list {
+                background-color: rgba(white, 0.5);
+                width: 30%;
+                transition: $transition;
+                position: relative;
+                z-index: 2;
+
+                .top {
+                    height: calc(100vh - 60px);
+                    overflow: auto;
+
+                    .reward {
+                        @include flex($just: space-between, $align: stretch);
+
+                        margin: 20px;
+                        font-size: 20px;
+                        font-weight: bold;
+                        background-color: rgba(white, 0.7);
+                        border-radius: 10px;
+                        overflow: hidden;
+
+                        p {
+                            padding: 20px;
+                            width: calc(100% - 80px);
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+
+                        button {
+                            border: none;
+                            outline: none;
+                            color: black;
+                            background-color: transparent;
+                            width: 80px;
+                            font-size: 20px;
+                            transition: $transition;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: rgba($errorColor, 0.3);
+                                color: white;
+                            }
+                        }
+                    }
+                }
+
+                .bottom {
+                    height: 60px;
+                    width: 100%;
+                    display: flex;
+
+                    input,
+                    button {
+                        border: none;
+                        outline: none;
+                        font-size: 20px;
+                    }
+
+                    input {
+                        width: calc(100% - 120px);
+                        height: calc(100% - 40px);
+                        padding: 20px;
+                    }
+
+                    button {
+                        text-transform: uppercase;
+                        box-sizing: content-box;
+                        width: 80px;
+                        height: 100%;
+                        font-weight: bold;
+                        background-color: $mainColor;
+                        color: white;
+                        cursor: pointer;
+                        transition: $transition;
+
+                        &:hover {
+                            opacity: 0.6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

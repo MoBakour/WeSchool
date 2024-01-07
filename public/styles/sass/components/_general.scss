@@ -74,23 +74,25 @@ header.hero-header {
         }
     }
 
-    button {
+    a.button {
         @include button(20px, 12px);
-        min-width: 50px;
+        display: inline-block;
+        text-decoration: none;
+        margin: 0 7px;
+        min-width: 30px;
+        text-align: center;
     }
+
     .create-class-opener::before {
         content: "Create class";
     }
-    .leaderboard-btn {
-        margin: 0 15px;
-        text-decoration: none;
-    }
+
     .logout-btn {
         background-image: linear-gradient(
             to right,
             $errorColor,
             lighten($errorColor, 20%)
-        );
+        ) !important;
     }
 }
 

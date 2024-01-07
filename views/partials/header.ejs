@@ -5,27 +5,33 @@
         </a>
 
         <a href="/profile" class="user">
-            <img
-                src="./images/characters/<%= locals.gender == 'female' ? 'mariam' : 'yousif' %>.png"
-                alt="Teacher Avatar"
-            />
+            <!-- Original Avatar Source: .src/images/characters/{yousif or mariam}.png -->
+            <img src="./images/awps-logo.png" alt="Teacher Avatar" />
             <p><%= locals.username %></p>
         </a>
     </div>
 
     <% if (locals.page == "app") { %>
     <div class="header-btns">
-        <button class="create-class-opener">
+        <a class="button create-class-opener">
             <i class="fa-solid fa-plus"></i>
-        </button>
-        <a class="leaderboard-btn" href="/leaderboard">
-            <button title="Leaderboard">
-                <i class="fa-solid fa-ranking-star"></i>
-            </button>
         </a>
-        <button class="logout-btn" title="Logout">
+
+        <a
+            class="button leaderboard-btn"
+            href="/leaderboard"
+            title="Leaderboard"
+        >
+            <i class="fa-solid fa-ranking-star"></i>
+        </a>
+
+        <a class="button rewards-btn" href="/rewards" title="Rewards Roullete">
+            <i class="fa-solid fa-gift"></i>
+        </a>
+
+        <a class="button logout-btn" title="Logout">
             <i class="fa-solid fa-arrow-right-from-bracket"></i>
-        </button>
+        </a>
     </div>
     <% } %>
 </header>

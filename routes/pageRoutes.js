@@ -82,9 +82,14 @@ router.get("/profile/edit", denyUnlogged, async (req, res) => {
 });
 
 router.get("/leaderboard", async (req, res) => {
-    const students = await Student.find().limit(100).sort({ points: -1 });
+    // const students = await Student.find().limit(100).sort({ points: -1 });
+    const students = await Student.find().sort({ points: -1 });
 
     res.render("leaderboard", { students });
+});
+
+router.get("/rewards", (req, res) => {
+    res.render("rewards");
 });
 
 export default router;
