@@ -3,12 +3,12 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-import { checkUser } from "./middlewares/authMiddleware.js";
+import { authenticateUser } from "./middlewares/authentication.js";
 
-import pageRoutes from "./routes/pageRoutes.js";
-import classRoutes from "./routes/classRoutes.js";
-import studentRoutes from "./routes/studentRoutes.js";
-import userRoutes from "./routes/userRoutes.js";
+import pagesController from "./controllers/pages.controller.js";
+import classController from "./controllers/class.controller.js";
+import studentController from "./controllers/student.controller.js";
+import userController from "./controllers/user.controller.js";
 
 // create express app
 const app = express();
@@ -21,14 +21,12 @@ app.use(cookieParser());
 app.set("view engine", "ejs");
 dotenv.config();
 
-// app variables
-const PORT = parseInt(process.env.PORT || process.env.port || 3000);
-const DB_URI = process.env.DB_URI;
-export const SECRET = process.env.SECRET;
+// env variables
+const PORT = parseInt(process.env.PORT || process.env.port || "3000");
 
 // connect to db
 mongoose
-    .connect(DB_URI, {
+    .connect(process.env.DB_URI, {
         dbName: "HeroApp",
     })
     .then(() => {
@@ -39,13 +37,13 @@ mongoose
     .catch((err) => console.log(err));
 
 // user authentication
-app.use((req, res, next) => checkUser(req, res, SECRET, next));
+app.use(authenticateUser);
 
 // app routes
-app.use(pageRoutes);
-app.use("/user", userRoutes);
-app.use("/class", classRoutes);
-app.use("/student", studentRoutes);
+app.use(pagesController);
+app.use("/user", userController);
+app.use("/class", classController);
+app.use("/student", studentController);
 
 // 404 page
 app.get("*", (req, res) => {

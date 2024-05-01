@@ -1,7 +1,7 @@
 {
     "project_info": {
         "project_name": "HeroApp",
-        "project_version": "V1.3.0",
+        "project_version": "V1.4.0",
         "project_description": "HeroApp student crediting platform",
         "project_development_start": "19 April, 2022",
         "project_development_end": "9 May, 2022",
@@ -220,6 +220,11 @@
             "Hide students with 0 points from the leaderboard table",
             "Published HeroApp V1.2.0"
         ],
-        "7_Jan_2024": ["Fixed some stuff", "Published HeroApp V1.3.0"]
+        "7_Jan_2024": ["Fixed some stuff", "Published HeroApp V1.3.0"],
+        "1_May_2024": [
+            "Refactored backend code",
+            "Hid rewards page",
+            "Published HeroApp V1.4.0"
+        ]
     }
 }
