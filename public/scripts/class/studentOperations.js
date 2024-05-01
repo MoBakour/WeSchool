@@ -87,7 +87,6 @@ const updateStudent = (lock) => {
 // update points operation
 const updatePoints = (lock, increment, value) => {
     if (lock) return false;
-    value = 1;
     if (!value || isNaN(value)) return false;
 
     lock = true;
