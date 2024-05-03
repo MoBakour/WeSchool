@@ -27,7 +27,7 @@ const PORT = parseInt(process.env.PORT || process.env.port || "3000");
 // connect to db
 mongoose
     .connect(process.env.DB_URI, {
-        dbName: "HeroApp",
+        dbName: "WeSchool",
     })
     .then(() => {
         app.listen(PORT, () => {

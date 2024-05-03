@@ -1,7 +1,7 @@
 {
-    "name": "heroapp",
+    "name": "weschool",
     "version": "1.4.0",
-    "description": "HeroApp student crediting platform",
+    "description": "WeSchool student crediting platform",
     "main": "app.js",
     "type": "module",
     "scripts": {
@@ -10,15 +10,15 @@
         "build": "npm install && sass ./public/styles/sass/style.scss ./public/styles/css/style.css"
     },
     "keywords": [
-        "hero",
-        "heroapp",
+        "weschool",
         "student",
-        "crediting",
+        "class",
         "management",
         "app",
         "school",
         "college",
-        "university"
+        "university",
+        "education"
     ],
     "author": "Swordax",
     "license": "ISC",
