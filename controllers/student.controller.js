@@ -102,7 +102,7 @@ router.delete("/delete", requireTeacher, async (req, res) => {
         await Student.findByIdAndDelete(student);
 
         await Class.findOneAndUpdate(
-            { classStudent: { $all: student } },
+            { classStudents: { $in: student } },
             { $pull: { classStudents: student } }
         );
 
