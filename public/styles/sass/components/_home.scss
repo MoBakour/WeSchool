@@ -2,272 +2,198 @@
 
 // home page styling
 .home {
-    section {
-        height: 100vh;
-        max-width: 100vw;
-    }
+	section {
+		height: 100vh;
+		max-width: 100vw;
+	}
 
-    // Landing Screen
-    .landing {
-        @include flex($just: space-between, $dir: column);
+	// Landing Screen
+	.landing {
+		@include flex($just: space-between, $dir: column);
 
-        header {
-            @include flex($just: space-around, $align: flex-start);
+		header {
+			@include flex($just: space-around, $align: flex-start);
 
-            width: 100%;
+			width: 100%;
 
-            .brand {
-                margin-top: 100px;
-                transform: translateX(70%);
+			.brand {
+				margin-top: 100px;
+				transform: translateX(70%);
 
-                h2 {
-                    font-size: 40px;
-                }
+				h2 {
+					font-size: 40px;
+				}
 
-                h1 {
-                    font-size: 60px;
-                    transform: translateX(40%);
-                }
+				h1 {
+					font-size: 60px;
+					transform: translateX(40%);
+				}
 
-                img {
-                    width: 240px;
-                    border-radius: 30px;
-                    box-shadow: 10px 10px 20px 0 rgba(black, 0.3);
-                    transform: translate(-70%, -20%);
-                }
-            }
+				img {
+					width: 240px;
+					border-radius: 30px;
+					box-shadow: 10px 10px 20px 0 rgba(black, 0.3);
+					transform: translate(-70%, -20%);
+				}
+			}
 
-            .nav {
-                margin-top: 50px;
+			.nav {
+				margin-top: 50px;
 
-                a {
-                    margin: 0 14px;
-                    border-radius: 50px;
+				a {
+					margin: 0 14px;
+					border-radius: 50px;
 
-                    font-size: 32px;
-                    font-weight: bold;
-                    color: black;
+					font-size: 32px;
+					font-weight: bold;
+					color: black;
 
-                    text-decoration: none;
-                    text-transform: uppercase;
+					text-decoration: none;
+					text-transform: uppercase;
 
-                    transition: $transition;
+					transition: $transition;
 
-                    &.signup-btn {
-                        @include button(32px, 50px);
-                    }
+					&.signup-btn {
+						@include button(32px, 50px);
+					}
 
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
-            }
-        }
-        .phrase {
-            width: 50%;
-            margin: auto;
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+		.phrase {
+			width: 50%;
+			margin: auto;
 
-            p {
-                margin: 0;
-                width: 700px;
-                font-size: 40px;
-                font-weight: bold;
+			p {
+				margin: 0;
+				width: 700px;
+				font-size: 40px;
+				font-weight: bold;
 
-                span {
-                    color: $mainColor;
-                    font-size: 50px;
-                }
-            }
-        }
-    }
+				span {
+					color: $mainColor;
+					font-size: 50px;
+				}
+			}
+		}
+	}
 
-    // About
-    .about {
-        @include flex();
+	// About
+	.about {
+		@include flex();
 
-        .container {
-            width: 70%;
-            position: relative;
-            transform: translateY(-100px);
+		.container {
+			width: 70%;
+			position: relative;
+			transform: translateY(-100px);
 
-            p {
-                font-size: 30px;
-                font-weight: bold;
-                width: 620px;
-                margin-top: 10%;
-            }
+			p {
+				font-size: 30px;
+				font-weight: bold;
+				width: 620px;
+				margin-top: 10%;
+			}
 
-            img {
-                width: 100px;
-                position: relative;
-            }
+			img {
+				width: 100px;
+				position: relative;
+			}
 
-            .char {
-                &-one {
-                    transform: scaleX(-1);
-                    width: 140px;
-                    top: 30px;
-                }
+			.char {
+				&-one {
+					transform: scaleX(-1);
+					width: 140px;
+					top: 30px;
+				}
 
-                &-two {
-                    top: 200px;
-                    left: 120px;
-                }
+				&-two {
+					top: 200px;
+					left: 120px;
+				}
 
-                &-three {
-                    top: 180px;
-                    left: 240px;
-                }
+				&-three {
+					top: 180px;
+					left: 240px;
+				}
 
-                &-four {
-                    top: 100px;
-                    left: 340px;
-                }
+				&-four {
+					top: 100px;
+					left: 340px;
+				}
 
-                &-five {
-                    top: -60px;
-                    left: 360px;
-                }
-            }
-        }
-    }
+				&-five {
+					top: -60px;
+					left: 360px;
+				}
+			}
+		}
+	}
 
-    // Ranking / Leaderboard
-    .ranking {
-        @include flex;
+	// Ranking / Leaderboard
+	.ranking {
+		@include flex;
 
-        .container {
-            @include flex($just: space-between);
-            width: 60%;
+		.container {
+			@include flex($just: space-between);
+			width: 60%;
 
-            p {
-                font-size: 30px;
-                font-weight: bold;
-                width: 400px;
-                padding-right: 20px;
-            }
+			p {
+				font-size: 30px;
+				font-weight: bold;
+				width: 400px;
+				padding-right: 20px;
+			}
 
-            button {
-                @include button($fontSize: 26px);
-                margin-top: 40px;
-            }
+			button {
+				@include button($fontSize: 26px);
+				margin-top: 40px;
+			}
 
-            img {
-                width: 260px;
-            }
-        }
-    }
+			img {
+				width: 260px;
+			}
+		}
+	}
 
-    // Contact
-    .contact {
-        @include flex;
+	// footer
+	.landing-footer {
+		text-align: center;
+		padding: 10px 5px;
 
-        height: fit-content;
+		a {
+			text-decoration: none;
+			font-weight: bold;
+		}
+	}
 
-        .container {
-            @include flex($dir: column, $just: space-evenly);
+	// Blobs
+	.blob {
+		&-one {
+			width: 60vw;
+			top: 50%;
+			right: 5%;
+		}
 
-            width: 80%;
-            // height: 100%;
+		&-two {
+			width: 60vw;
+			top: -40%;
+			left: -20%;
+		}
 
-            h3 {
-                font-size: 40px;
-                text-align: center;
-            }
+		&-three {
+			width: 60vw;
+			top: 140%;
+			left: 10%;
+		}
 
-            .contacts {
-                @include flex($just: center);
-                gap: 30px;
-
-                width: 100%;
-
-                a {
-                    text-decoration: none;
-                    cursor: pointer;
-                    font-size: 60px;
-                    text-align: center;
-                    opacity: 0.6;
-                    transition: $transition;
-
-                    &:hover {
-                        opacity: 1;
-                    }
-                }
-
-                &-at {
-                    color: black;
-                }
-
-                &-discord {
-                    color: #5865f2;
-                }
-
-                &-mail {
-                    color: #db4437;
-                }
-            }
-        }
-    }
-
-    // Tooltip
-    .tooltip {
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translate(-50%, calc(-100% - 10px));
-
-        background-color: darken($mainColor, 20%);
-        color: white;
-        padding: 10px 20px;
-        border-radius: 10px;
-
-        font-size: 20px;
-        font-weight: bold;
-        transition: $transition;
-
-        &::before {
-            content: "";
-
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%) rotate(45deg);
-
-            width: 20px;
-            height: 20px;
-            background-color: darken($mainColor, 20%);
-        }
-
-        &.active {
-            transform: translate(-50%, 0);
-        }
-    }
-
-    // Blobs
-    .blob {
-        &-one {
-            width: 60vw;
-            top: 20%;
-            right: -30%;
-        }
-
-        &-two {
-            width: 60vw;
-            top: -40%;
-            left: -20%;
-        }
-
-        &-three {
-            width: 60vw;
-            top: 120%;
-            left: 10%;
-        }
-
-        &-four {
-            width: 40vw;
-            top: 280%;
-            right: 10%;
-            display: none;
-        }
-    }
+		&-four {
+			width: 40vw;
+			top: 280%;
+			right: 10%;
+			display: none;
+		}
+	}
 }

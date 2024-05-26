@@ -2,265 +2,269 @@
 
 // general styles
 * {
-    padding: 0;
-    margin: 0;
-    font-family: "Quicksand", "Almarai";
+	padding: 0;
+	margin: 0;
+	font-family: "Quicksand", "Almarai";
 }
 
 // hide overflow
 html,
 body {
-    overflow-x: hidden;
+	overflow-x: hidden;
 }
 
 // body element styles
 body {
-    background-color: rgba($mainColor, 0.2);
-    min-height: 100vh;
+	background-color: rgba($mainColor, 0.2);
+	min-height: 100vh;
 }
 
 // custom scrollbar
 ::-webkit-scrollbar {
-    width: 10px;
+	width: 10px;
 
-    &-thumb {
-        background-color: $mainColor;
-        border-radius: 10px;
-    }
+	&-thumb {
+		background-color: $mainColor;
+		border-radius: 10px;
+	}
 }
 
 // general blob styles
 .blob {
-    position: absolute;
-    filter: blur(60px);
-    opacity: 0.3;
-    z-index: -1;
+	position: absolute;
+	filter: blur(60px);
+	opacity: 0.3;
+	z-index: -1;
+}
+
+.blob img {
+	width: 400px;
 }
 
 // header
 header.hero-header {
-    @include flex($just: space-between);
+	@include flex($just: space-between);
 
-    padding: 20px;
-    background-image: linear-gradient(
-        to bottom,
-        darken(rgba($mainColor, 0.2), 20%),
-        transparent
-    );
+	padding: 20px;
+	background-image: linear-gradient(
+		to bottom,
+		darken(rgba($mainColor, 0.2), 20%),
+		transparent
+	);
 
-    .account {
-        @include flex;
+	.account {
+		@include flex;
 
-        a.app-logo {
-            img {
-                width: 50px;
-                border-radius: 12px;
-            }
-        }
+		a.app-logo {
+			img {
+				width: 50px;
+				border-radius: 12px;
+			}
+		}
 
-        a.user {
-            @include flex;
+		a.user {
+			@include flex;
 
-            text-decoration: none;
-            color: black;
-            font-size: 24px;
-            font-weight: bold;
-            margin-left: 40px;
+			text-decoration: none;
+			color: black;
+			font-size: 24px;
+			font-weight: bold;
+			margin-left: 40px;
 
-            img {
-                width: 40px;
-                margin-right: 10px;
-            }
-        }
-    }
+			img {
+				width: 40px;
+				margin-right: 10px;
+			}
+		}
+	}
 
-    a.button {
-        @include button(20px, 12px);
-        display: inline-block;
-        text-decoration: none;
-        margin: 0 7px;
-        min-width: 30px;
-        text-align: center;
-    }
+	a.button {
+		@include button(20px, 12px);
+		display: inline-block;
+		text-decoration: none;
+		margin: 0 7px;
+		min-width: 30px;
+		text-align: center;
+	}
 
-    .create-class-opener::before {
-        content: "Create class";
-    }
+	.create-class-opener::before {
+		content: "Create class";
+	}
 
-    .logout-btn {
-        background-image: linear-gradient(
-            to right,
-            $errorColor,
-            lighten($errorColor, 20%)
-        ) !important;
-    }
+	.logout-btn {
+		background-image: linear-gradient(
+			to right,
+			$errorColor,
+			lighten($errorColor, 20%)
+		) !important;
+	}
 }
 
 // no content message
 .no-content {
-    display: none;
-    text-align: center;
-    font-size: 40px;
-    padding: 20px;
+	display: none;
+	text-align: center;
+	font-size: 40px;
+	padding: 20px;
 
-    &.active {
-        display: block;
-    }
+	&.active {
+		display: block;
+	}
 }
 
 // darken effect
 .darken {
-    position: fixed;
-    top: 0;
-    left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 
-    background-color: rgba(black, 0.7);
-    backdrop-filter: blur(4px);
-    transition: $transition;
+	background-color: rgba(black, 0.7);
+	backdrop-filter: blur(4px);
+	transition: $transition;
 
-    z-index: -1;
-    opacity: 0;
+	z-index: -1;
+	opacity: 0;
 
-    &.active {
-        z-index: 2;
-        opacity: 1;
-    }
+	&.active {
+		z-index: 2;
+		opacity: 1;
+	}
 }
 
 // class-box styling
 .class-box {
-    @include flex;
+	@include flex;
 
-    position: relative;
-    width: 140px;
-    height: 140px;
+	position: relative;
+	width: 140px;
+	height: 140px;
 
-    padding: 10px;
-    margin: 30px;
+	padding: 10px;
+	margin: 30px;
 
-    border-radius: 30px;
-    box-shadow: 0 0 12px 0 rgba(black, 0.3);
-    overflow: hidden;
+	border-radius: 30px;
+	box-shadow: 0 0 12px 0 rgba(black, 0.3);
+	overflow: hidden;
 
-    font-weight: bold;
-    text-decoration: none;
-    text-align: center;
-    word-break: break-word;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	word-break: break-word;
 
-    transition: $transition;
+	transition: $transition;
 
-    &:hover:not(.class .class-box) {
-        cursor: pointer;
-        transform: scale(1.05);
-    }
+	&:hover:not(.class .class-box) {
+		cursor: pointer;
+		transform: scale(1.05);
+	}
 
-    &.hidden {
-        display: none;
-    }
+	&.hidden {
+		display: none;
+	}
 }
 
 // password icon
 .pass-icon {
-    position: absolute;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+	position: absolute;
+	right: 5px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
 
-    .password-shown {
-        display: none;
-    }
+	.password-shown {
+		display: none;
+	}
 
-    &.active {
-        .password-shown {
-            display: inline-block;
-        }
+	&.active {
+		.password-shown {
+			display: inline-block;
+		}
 
-        .password-hidden {
-            display: none;
-        }
-    }
+		.password-hidden {
+			display: none;
+		}
+	}
 }
 
 // error field
 .error-field {
-    width: calc(100% - 20px);
-    padding: 10px;
-    border-radius: 8px;
+	width: calc(100% - 20px);
+	padding: 10px;
+	border-radius: 8px;
 
-    color: $errorColor;
-    background-color: lighten($errorColor, 45%);
+	color: $errorColor;
+	background-color: lighten($errorColor, 45%);
 
-    text-align: center;
-    font-weight: bold;
+	text-align: center;
+	font-weight: bold;
 
-    &:empty {
-        padding: 0;
-    }
+	&:empty {
+		padding: 0;
+	}
 }
 
 // confirmation popup
 .confirmation {
-    @include flex;
+	@include flex;
 
-    background-color: rgba(black, 0.7);
-    backdrop-filter: blur(4px);
+	background-color: rgba(black, 0.7);
+	backdrop-filter: blur(4px);
 
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 
-    position: fixed;
-    top: 0;
-    left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
 
-    transition: $transition;
-    z-index: -1;
-    opacity: 0;
+	transition: $transition;
+	z-index: -1;
+	opacity: 0;
 
-    &.active {
-        z-index: 4;
-        opacity: 1;
+	&.active {
+		z-index: 4;
+		opacity: 1;
 
-        .content {
-            transform: scale(1);
-        }
-    }
+		.content {
+			transform: scale(1);
+		}
+	}
 
-    .content {
-        background-color: white;
+	.content {
+		background-color: white;
 
-        width: 300px;
-        padding: 20px;
-        border-radius: 20px;
+		width: 300px;
+		padding: 20px;
+		border-radius: 20px;
 
-        transition: $transition;
-        transform: scale(0);
+		transition: $transition;
+		transform: scale(0);
 
-        h2 {
-            color: $errorColor;
-            font-size: 24px;
-        }
+		h2 {
+			color: $errorColor;
+			font-size: 24px;
+		}
 
-        h3 {
-            color: black !important;
-            font-size: 18px;
-            margin-top: 10px;
-            margin-bottom: 20px;
-        }
+		h3 {
+			color: black !important;
+			font-size: 18px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
 
-        div {
-            @include flex($just: space-between);
+		div {
+			@include flex($just: space-between);
 
-            .confirm {
-                @include button($color: $mainColor);
-            }
+			.confirm {
+				@include button($color: $mainColor);
+			}
 
-            .deconfirm {
-                @include button($color: $errorColor);
-            }
-        }
-    }
+			.deconfirm {
+				@include button($color: $errorColor);
+			}
+		}
+	}
 }

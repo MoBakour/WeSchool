@@ -8,6 +8,6 @@ WeSchool is a class management application, a teacher can create an account wher
 
 ## Contact
 
-Find me on discord as [Swordax#5756](https://discord.com/users/465453058667839499/)<br>
-Email me through [swordax.sy](mailto:swordax.sy@gmail.com)<br>
-Find me on social media as @swordax.sy<br>
+Linkedin: [mobakour](https://linkedin.com/in/mobakour)<br>
+Email: [mo.bakour@outlook.com](mailto:mo.bakour@outlook.com)<br>
+Discord: [swordax](https://discord.com/users/465453058667839499/)
