@@ -1,99 +1,99 @@
 @use "../abstracts" as *;
 
 .sign body {
-	@include flex;
+    @include flex;
 }
 
 .sign {
-	form {
-		width: 240px;
-		padding: 12px;
-		border-radius: 20px;
+    form {
+        width: 240px;
+        padding: 12px;
+        border-radius: 20px;
 
-		background-color: white;
-		box-shadow: 2px 2px 20px 0 rgba(black, 0.3);
+        background-color: white;
+        box-shadow: 2px 2px 20px 0 rgba(black, 0.3);
 
-		header {
-			@include flex($just: space-between);
+        header {
+            @include flex($just: space-between);
 
-			margin-bottom: 20px;
+            margin-bottom: 20px;
 
-			h1 {
-				font-size: 36px;
-			}
+            h1 {
+                font-size: 36px;
+            }
 
-			a {
-				@include flex;
+            a {
+                @include flex;
 
-				img {
-					width: 40px;
-					border-radius: 10px;
-				}
-			}
-		}
+                img {
+                    width: 40px;
+                    border-radius: 10px;
+                }
+            }
+        }
 
-		section {
-			.input-field {
-				@include flex($just: space-evenly);
+        section {
+            .input-field {
+                @include flex($just: space-evenly);
 
-				padding: 10px 0;
-				position: relative;
+                padding: 10px 0;
+                position: relative;
 
-				input {
-					width: 100%;
-					padding: 4px;
-					font-size: 20px;
+                input {
+                    width: 100%;
+                    padding: 4px;
+                    font-size: 20px;
 
-					border: none;
-					outline: none;
-					border-bottom: 2px solid black;
-				}
+                    border: none;
+                    outline: none;
+                    border-bottom: 2px solid black;
+                }
 
-				.selection {
-					@include flex($just: flex-start);
+                .selection {
+                    @include flex($just: flex-start);
 
-					margin: 0 6px;
-					cursor: pointer;
+                    margin: 0 6px;
+                    cursor: pointer;
 
-					.option {
-						width: 16px;
-						height: 16px;
-						margin-right: 4px;
+                    .option {
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 4px;
 
-						border-radius: 50%;
-						border: 2px solid $mainColor;
+                        border-radius: 50%;
+                        border: 2px solid $mainColor;
 
-						transition: $transition;
-					}
+                        transition: $transition;
+                    }
 
-					strong {
-						color: $mainColor;
-					}
+                    strong {
+                        color: $mainColor;
+                    }
 
-					&.active .option {
-						background-color: $mainColor;
-					}
-				}
+                    &.active .option {
+                        background-color: $mainColor;
+                    }
+                }
 
-				button {
-					@include button();
-					// button mixin defaults:
-					//      font-size => 20px
-					//      border-radius => 12px
-				}
-			}
-		}
-	}
+                button {
+                    @include button();
+                    // button mixin defaults:
+                    //      font-size => 20px
+                    //      border-radius => 12px
+                }
+            }
+        }
+    }
 
-	.blob {
-		&-one {
-			width: 40vw;
-			left: 10%;
-		}
+    .blob {
+        &-one {
+            width: 40vw;
+            left: 10%;
+        }
 
-		&-two {
-			width: 30vw;
-			right: 10%;
-		}
-	}
+        &-two {
+            width: 30vw;
+            right: 10%;
+        }
+    }
 }
